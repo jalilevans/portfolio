@@ -17,25 +17,25 @@ export default function Contact() {
         </p>
         <div className="space-y-6">
           <div className="flex items-center gap-4">
-            <span className="text-[14px] font-semibold leading-[1.29] tracking-[-0.224px] text-ink-muted-48 w-20 shrink-0">
+            <span className="text-[16px] font-normal leading-[1.29] tracking-[-0.224px] text-ink-muted-48 w-20 shrink-0">
               Email
             </span>
             <a
               href={mailto}
-              className="text-[17px] font-normal leading-[1.47] tracking-[-0.374px] text-primary hover:text-primary-focus transition-colors"
+              className="text-link text-[16px] font-normal leading-[1.47] tracking-[-0.374px] text-primary hover:text-primary-focus transition-colors"
             >
               {contact.email}
             </a>
           </div>
           <div className="flex items-center gap-4">
-            <span className="text-[14px] font-semibold leading-[1.29] tracking-[-0.224px] text-ink-muted-48 w-20 shrink-0">
+            <span className="text-[16px] font-normal leading-[1.29] tracking-[-0.224px] text-ink-muted-48 w-20 shrink-0">
               LinkedIn
             </span>
             <a
               href={contact.linkedInUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[17px] font-normal leading-[1.47] tracking-[-0.374px] text-primary hover:text-primary-focus transition-colors"
+              className="text-link text-[16px] font-normal leading-[1.47] tracking-[-0.374px] text-primary hover:text-primary-focus transition-colors"
             >
               linkedin.com/in/jalil-evans
             </a>

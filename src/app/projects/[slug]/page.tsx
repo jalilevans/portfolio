@@ -126,7 +126,7 @@ export default async function ProjectDetailPage({ params }: Props) {
           href={project.url}
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-8 inline-block text-[17px] font-normal leading-[1.47] tracking-[-0.374px] text-primary hover:text-primary-focus transition-colors underline underline-offset-4"
+          className="text-link mt-8 inline-block text-[17px] font-normal leading-[1.47] tracking-[-0.374px] text-primary hover:text-primary-focus transition-colors underline underline-offset-4"
         >
           View Project →
         </a>

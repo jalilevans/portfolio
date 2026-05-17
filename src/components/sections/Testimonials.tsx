@@ -23,10 +23,10 @@ export default function Testimonials() {
           {testimonials.map((t, i) => (
             <FadeInView key={i} delay={i * 0.1}>
               <blockquote className="rounded-[18px] border border-hairline bg-canvas-parchment p-6">
-                <p className="mb-4 text-[17px] font-normal leading-[1.47] tracking-[-0.374px] text-ink-muted-80">
+                <p className="mb-4 text-[18px] font-normal leading-[1.47] tracking-[-0.374px] text-ink-muted-80">
                   &ldquo;{t.quote}&rdquo;
                 </p>
-                <footer className="text-[14px] font-normal leading-[1.43] tracking-[-0.224px] text-ink-muted-48">
+                <footer className="text-[16px] font-normal leading-[1.43] tracking-[-0.224px] text-ink-muted-48">
                   {t.name}, {t.title}
                 </footer>
               </blockquote>

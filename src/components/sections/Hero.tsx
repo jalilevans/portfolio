@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { TypewriterText } from "@/components/ui/TypewriterText";
 import { ParticleSpacetimeMesh } from "@/components/ui/ParticleSpacetimeMesh";
 
-const HERO_PHRASES = ["prototype with real code.", 
+const HERO_PHRASES = ["prototype with code.", 
                       "define product strategy.", 
                       "get ideas funded.",
                       "uplevel UI quality."];
@@ -38,18 +38,18 @@ export default function Hero() {
             Senior Product Designer · Meta, Facebook Stories
           </motion.p>
           <motion.h1
-            className="font-display text-[34px] md:text-[48px] font-normal leading-[1.07] tracking-[-0.28px] text-ink max-w-[680px] mb-4"
+            className="font-display text-[34px] md:text-[48px] font-normal leading-[1.07] tracking-[-0.28px] text-ink max-w-[680px] mb-4 grid"
             variants={fadeUp}
             initial="hidden"
             animate="show"
             custom={0.1}
           >
-            I&apos;m a design generalist who can{" "}
-            <span className="relative inline-block">
-              <span className="invisible" aria-hidden="true">prototype with real code.</span>
-              <span className="absolute left-0 top-0 w-full">
-                <TypewriterText phrases={HERO_PHRASES} />
-              </span>
+            <span className="col-start-1 row-start-1">
+              I&apos;m a design generalist who can{" "}
+              <TypewriterText phrases={HERO_PHRASES} />
+            </span>
+            <span aria-hidden="true" className="col-start-1 row-start-1 invisible">
+              I&apos;m a design generalist who can define product strategy.
             </span>
           </motion.h1>
           <motion.p

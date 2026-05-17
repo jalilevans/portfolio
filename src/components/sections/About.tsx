@@ -17,10 +17,12 @@ export default function About() {
               <div className="space-y-4 text-[18px] font-normal leading-[1.47] tracking-[-0.374px] text-ink-muted-80">
                 <p>
                   I&apos;m a product designer at Meta, where I&apos;ve spent 5
-                  years across craft, growth, and product strategy on Facebook
-                  Stories. I prototype in SwiftUI, use AI to move faster than
-                  expected, and I&apos;d rather put something in your hands than
-                  walk you through a deck.
+                  years leading design across craft, growth, and product strategy
+                  on Facebook Stories and private sharing. I&apos;m particularly
+                  energized by visionary projects, and I lean into interactive
+                  prototypes as a form of storytelling. Decks are great, but
+                  there&apos;s something powerful about being able to actually see
+                  and touch the vision being pitched.
                 </p>
                 <p>
                   Before Meta, I co-founded Bloom, a community hosting platform
@@ -30,9 +32,11 @@ export default function About() {
                   requests before we graduated.
                 </p>
                 <p>
-                  I&apos;m looking for an early team where I can own surfaces
-                  end-to-end and where design actually shapes what the product
-                  becomes.
+                  I graduated from Cornell University in 2021 where I studied
+                  information science, startups, and UX design. Currently living
+                  in Maryland, but planning a move to Jersey City in January 2027.
+                  I&apos;m open to opportunities with early teams where I can own
+                  surfaces end-to-end and where design shapes the product strategy.
                 </p>
               </div>
             </div>
@@ -40,7 +44,7 @@ export default function About() {
           buildPanel={
             <div>
               <h3 className="text-[34px] font-normal leading-[1.47] tracking-[-0.374px] text-ink mb-4">
-                I build to think.
+                I lead with prototypes.
               </h3>
               <div className="space-y-4 text-[18px] font-normal leading-[1.47] tracking-[-0.374px] text-ink-muted-80">
                 <p>
@@ -48,18 +52,18 @@ export default function About() {
                   in your hands.
                 </p>
                 <p>
-                  I prototype in SwiftUI using Cursor, which means my
-                  explorations are interactive, native-feeling, and playable, not
-                  just clickable screens. This changes the conversation.
-                  Engineers stop asking &quot;but how would this really
-                  feel?&quot; and start actually feeling it. PMs don&apos;t need
-                  to imagine the experience. They can touch it.
+                  I prototype in mobile and web contexts using Cursor (usually
+                  with SwiftUI or React/Next.js).
+                </p>
+                <p>
+                  This makes collaboration much more simple. PMs don&apos;t need
+                  to imagine the experience, they can touch it. Engineers
+                  don&apos;t need to ask about transitions or motion because
+                  it&apos;s all baked into the prototype.
                 </p>
                 <p>
                   I run a workshop every other week at Meta teaching designers
-                  how to prototype with AI tools. The goal isn&apos;t to replace
-                  engineering. It&apos;s to compress the distance between an idea
-                  and something real enough to make a real decision.
+                  how to prototype with AI tools.
                 </p>
               </div>
             </div>

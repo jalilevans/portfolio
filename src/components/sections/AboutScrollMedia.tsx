@@ -106,7 +106,7 @@ export function AboutScrollMedia({
 
   return (
     <div className="grid grid-cols-1 items-start gap-x-14 md:grid-cols-[minmax(0,680px)_minmax(0,1fr)]">
-      <div className="order-2 min-w-0 space-y-32 md:space-y-44 md:order-1 md:pt-[30vh] md:pb-[30vh]">
+      <div className="order-2 min-w-0 space-y-16 md:space-y-44 md:order-1 md:pt-[30vh] md:pb-[30vh]">
         <div ref={ref0} data-phase="0">
           {bioPanel}
         </div>

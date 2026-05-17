@@ -131,35 +131,57 @@ export function TypewriterText({ phrases }: TypewriterTextProps) {
   const useExpand   = mode === "gravity"  || mode === "spacetime";
   const showCaret   = mode === "classic"  || mode === "quantum";
 
+  // Group char indices by word so each word wraps as an atomic unit —
+  // prevents punctuation like "." from breaking onto its own line.
+  type CharGroup = { type: "word"; indices: number[] } | { type: "space"; index: number };
+  const groups: CharGroup[] = [];
+  let wordBuf: number[] = [];
+  chars.forEach((ch, i) => {
+    if (ch === " ") {
+      if (wordBuf.length > 0) { groups.push({ type: "word", indices: wordBuf }); wordBuf = []; }
+      groups.push({ type: "space", index: i });
+    } else {
+      wordBuf.push(i);
+    }
+  });
+  if (wordBuf.length > 0) groups.push({ type: "word", indices: wordBuf });
+
+  const renderChar = (i: number) => {
+    const isLast     = i === chars.length - 1;
+    const isNew      = isLast && !isDeleting;
+    const showGlyph  = isNew && scrambleChar !== null;
+    const collapsing = i === collapsingIdx;
+    const expanding  = isNew && useExpand;
+
+    let charStyle: React.CSSProperties | undefined;
+    if (collapsing) {
+      charStyle = { display: "inline-block", animation: `char-collapse ${COLLAPSE_DURATION}ms ease-in forwards` };
+    } else if (expanding) {
+      charStyle = { display: "inline-block", animation: `char-expand ${EXPAND_DURATION}ms cubic-bezier(0.4,0,0.2,1) forwards` };
+    }
+
+    return (
+      <span
+        key={i}
+        ref={isLast && !isDeleting ? (lastCharRef as RefObject<HTMLSpanElement>) : null}
+        style={charStyle}
+      >
+        {showGlyph ? scrambleChar : chars[i]}
+      </span>
+    );
+  };
+
   return (
     <span className="text-primary">
-      {chars.map((ch, i) => {
-        const isLast     = i === chars.length - 1;
-        const isNew      = isLast && !isDeleting;
-        const showGlyph  = isNew && scrambleChar !== null;
-        const collapsing = i === collapsingIdx;
-        const expanding  = isNew && useExpand;
-
-        let charStyle: React.CSSProperties | undefined;
-        if (collapsing) {
-          charStyle = {
-            display: "inline-block",
-            animation: `char-collapse ${COLLAPSE_DURATION}ms ease-in forwards`,
-          };
-        } else if (expanding) {
-          charStyle = {
-            display: "inline-block",
-            animation: `char-expand ${EXPAND_DURATION}ms cubic-bezier(0.4,0,0.2,1) forwards`,
-          };
+      {groups.map((group) => {
+        if (group.type === "space") {
+          return <span key={group.index}> </span>;
         }
-
+        // inline-block + whitespace-nowrap keeps the whole word together —
+        // no character (including trailing punctuation) can split to a new line.
         return (
-          <span
-            key={i}
-            ref={isLast && !isDeleting ? (lastCharRef as RefObject<HTMLSpanElement>) : null}
-            style={charStyle}
-          >
-            {showGlyph ? scrambleChar : ch}
+          <span key={group.indices[0]} className="inline-block whitespace-nowrap">
+            {group.indices.map(renderChar)}
           </span>
         );
       })}

@@ -67,6 +67,12 @@ body {
   button:active {
     transform: scale(0.95);
   }
+
+  /* Text links don't scale — only pill buttons and cards do */
+  a.text-link:hover,
+  a.text-link:active {
+    transform: none;
+  }
 }
 
 /* Typewriter spacetime effects */

@@ -46,7 +46,7 @@ export default function Navbar() {
             <li key={href}>
               <a
                 href={href}
-                className="text-[14px] font-normal tracking-[-0.224px] text-ink hover:text-primary transition-colors"
+                className="text-link text-[14px] font-normal tracking-[-0.224px] text-ink hover:text-primary transition-colors"
               >
                 {label}
               </a>
@@ -56,7 +56,7 @@ export default function Navbar() {
             <a
               href={navigation.resumeHref}
               onClick={resumeClick}
-              className="text-[14px] font-normal tracking-[-0.224px] text-ink hover:text-primary transition-colors"
+              className="text-link text-[14px] font-normal tracking-[-0.224px] text-ink hover:text-primary transition-colors"
             >
               Resume
             </a>
@@ -98,7 +98,7 @@ export default function Navbar() {
                 <a
                   href={href}
                   onClick={() => setMenuOpen(false)}
-                  className="block py-3 text-[17px] font-normal tracking-[-0.374px] text-ink border-b border-hairline last:border-0"
+                  className="text-link block py-3 text-[17px] font-normal tracking-[-0.374px] text-ink border-b border-hairline last:border-0"
                 >
                   {label}
                 </a>
@@ -111,7 +111,7 @@ export default function Navbar() {
                   resumeClick(e);
                   setMenuOpen(false);
                 }}
-                className="block py-3 text-[17px] font-normal tracking-[-0.374px] text-ink border-b border-hairline"
+                className="text-link block py-3 text-[17px] font-normal tracking-[-0.374px] text-ink border-b border-hairline"
               >
                 Resume
               </a>
