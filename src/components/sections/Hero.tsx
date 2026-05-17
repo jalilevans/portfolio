@@ -45,12 +45,7 @@ export default function Hero() {
             custom={0.1}
           >
             I&apos;m a design generalist who can{" "}
-            <span className="relative inline-block">
-              <span className="invisible whitespace-nowrap" aria-hidden="true">prototype with AI.</span>
-              <span className="absolute left-0 top-0 whitespace-nowrap">
-                <TypewriterText phrases={HERO_PHRASES} />
-              </span>
-            </span>
+            <TypewriterText phrases={HERO_PHRASES} />
           </motion.h1>
           <motion.p
             className="text-[18px] font-normal leading-[1.47] tracking-[-0.374px] text-ink-muted-80 max-w-[540px] mb-8"
