@@ -1,0 +1,111 @@
+@import "tailwindcss";
+
+@theme {
+  /* Brand & Accent */
+  --color-primary: #6c584c;
+  --color-primary-focus: #7d6759;
+  --color-primary-on-dark: #a98467;
+
+  /* Ink / Text */
+  --color-ink: #201e1e;
+  --color-ink-muted-80: #333333;
+  --color-ink-muted-48: #7a7a7a;
+  --color-body-muted: #cccccc;
+
+  /* Surfaces */
+  --color-canvas: #ffffff;
+  --color-canvas-parchment: #f6f5f4;
+  --color-surface-pearl: #fafafc;
+  --color-surface-tile-1: #2a2928;
+  --color-surface-tile-2: #2c2b2a;
+  --color-surface-tile-3: #272625;
+  --color-surface-black: #000000;
+  --color-surface-chip-translucent: #d6d3d1;
+
+  /* Hairlines */
+  --color-hairline: #e0e0e0;
+  --color-divider-soft: #f0f0f0;
+
+  /* Semantic aliases — used throughout existing components */
+  --color-background: #ffffff;
+  --color-foreground: #201e1e;
+
+  /* Typography */
+  --font-display: var(--font-inter), "SF Pro Display", system-ui, -apple-system, sans-serif;
+  --font-body: var(--font-inter), "SF Pro Text", system-ui, -apple-system, sans-serif;
+  --font-sans: var(--font-inter), system-ui, -apple-system, sans-serif;
+}
+
+@utility featured-track-pl {
+  padding-left: max(1.5rem, calc(50vw - 43.5rem));
+  scroll-padding-left: max(1.5rem, calc(50vw - 43.5rem));
+}
+
+
+body {
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.47;
+  letter-spacing: -0.374px;
+  color: var(--color-foreground);
+  background: var(--color-background);
+}
+
+/* Subtle lift on interactive elements — pairs with the gravity ring cursor */
+@media (prefers-reduced-motion: no-preference) {
+  a,
+  button {
+    transition: transform 180ms ease;
+  }
+
+  a:hover,
+  button:hover {
+    transform: scale(1.03);
+  }
+
+  a:active,
+  button:active {
+    transform: scale(0.95);
+  }
+}
+
+/* Typewriter spacetime effects */
+@keyframes pulse-orb {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: .4; transform: scale(.55); }
+}
+
+@keyframes char-collapse {
+  to { opacity: 0; transform: scale(0); }
+}
+
+@keyframes char-expand {
+  from { opacity: 0; transform: scale(0); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+/* About sticky media: scroll-driven scale-up as the frame enters (md+ only). */
+@keyframes about-media-grow {
+  from {
+    transform: scale(0.86);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
+
+@media (min-width: 768px) and (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    /*
+      Grow while the element crosses into view and approaches the sticky band.
+      Adjust entry/cover percentages if the motion feels early or late in the scroll.
+    */
+    .about-media-entrance {
+      transform-origin: top right;
+      animation: about-media-grow linear both;
+      animation-timeline: view(block);
+      animation-range: entry 0% cover 55%;
+    }
+  }
+}
