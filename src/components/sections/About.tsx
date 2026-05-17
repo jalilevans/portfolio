@@ -48,10 +48,6 @@ export default function About() {
               </h3>
               <div className="space-y-4 text-[18px] font-normal leading-[1.47] tracking-[-0.374px] text-ink-muted-80">
                 <p>
-                  Most designers show you a Figma file. I&apos;ll put something
-                  in your hands.
-                </p>
-                <p>
                   I prototype in mobile and web contexts using Cursor (usually
                   with SwiftUI or React/Next.js).
                 </p>
@@ -63,7 +59,8 @@ export default function About() {
                 </p>
                 <p>
                   I run a workshop every other week at Meta teaching designers
-                  how to prototype with AI tools.
+                  how to prototype with AI tools. Reducing the time it takes to make a 
+                  decision and enabling the team to build faster.
                 </p>
               </div>
             </div>
