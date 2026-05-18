@@ -62,7 +62,7 @@ export default function Hero() {
             5 years at Meta across craft, growth, and product strategy. I prototype in SwiftUI, React, and Next.js, and run workshops teaching designers to prototype with AI. Before Meta, I co-founded a startup. Looking for an early-stage company where design shapes strategy.
           </motion.p>
           <motion.div
-            className="flex items-center gap-4 flex-wrap -ml-[4px]"
+            className="flex items-center gap-4 flex-wrap ml-[-4px]"
             variants={fadeUp}
             initial="hidden"
             animate="show"
