@@ -50,7 +50,7 @@ export default function Contact() {
           </div> */}
         </div>
 
-        <div className="mt-12 -ml-[4px]">
+        <div className="mt-12 ml-[-4px]">
           <a
             href={mailto}
             className="inline-block bg-primary text-white text-[17px] font-normal leading-[1.47] tracking-[-0.374px] rounded-full px-[22px] py-[11px] hover:bg-primary-focus transition-colors active:scale-95"
